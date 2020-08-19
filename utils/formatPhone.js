@@ -1,4 +1,8 @@
+/* eslint-disable no-use-before-define */
 const formatPhone = (newText, prevPhone) => {
+  const isnum = /^\d+$/.test(stripPhone(newText).slice(1));
+  if (!isnum) return prevPhone;
+
   let strippedPhone = newText;
   strippedPhone = strippedPhone.replace(' ', '');
   strippedPhone = strippedPhone.replace('(', '');
