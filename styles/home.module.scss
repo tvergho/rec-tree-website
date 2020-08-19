@@ -1,0 +1,101 @@
+.fullImage {
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../public/storefront.png');
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+  padding-top: 120px;
+
+  .col {
+    width: 50vw; 
+    flex: 0 1 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    padding: 0px 5vw;
+    margin-top: 100px;
+
+    .infoBold {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    .info {
+      font-size: 1.6rem;
+      font-weight: 300;
+    }
+  }
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+
+  .merchantLogo {
+    margin-left: 15px;
+  }
+
+  nav {
+    display: flex;
+    flex: 0 1 40%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .navButton {
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
+
+.mobileButton {
+  transition: all 0.3s;
+  color: white;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.mobileBackdrop {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  padding: 20px;
+  background-color: white;
+  z-index: 150;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1200px) {
+  .col {
+    margin-top: 20px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-bottom: 0px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .fullImage {
+    flex-direction: column !important;
+  }
+  .col {
+    flex: 1 1 100% !important;
+    width: 100vw !important;
+  }
+}
