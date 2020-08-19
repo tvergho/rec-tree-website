@@ -1,6 +1,6 @@
 import React from 'react';
 import homeStyles from 'styles/home.module.scss';
-import { TopHeader } from './index';
+import { TopHeader, InterestForm } from './index';
 
 const LeftCol = () => {
   return (
@@ -17,6 +17,7 @@ const FullImageBanner = () => {
       <TopHeader />
       <div className={homeStyles.fullImage}>
         <LeftCol />
+        <InterestForm />
       </div>
     </>
   );
