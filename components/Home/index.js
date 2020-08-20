@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export */
 import TopImageBanner from './TopImageBanner';
+import Steps from './Steps';
 
-export { TopImageBanner };
+export { TopImageBanner, Steps };

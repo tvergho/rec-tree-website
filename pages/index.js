@@ -1,7 +1,7 @@
 import React from 'react';
 import { NextSeo } from 'next-seo';
 import TopHeader from 'components/TopHeader';
-import { TopImageBanner } from 'components/Home';
+import { TopImageBanner, Steps } from 'components/Home';
 
 const Home = () => {
   const HEADER_LINKS = [{ name: 'Product' }, { name: 'For Businesses', to: '/business' }, { name: 'Sign up' }];
@@ -14,6 +14,7 @@ const Home = () => {
       />
       <TopHeader links={HEADER_LINKS} invert border />
       <TopImageBanner />
+      <Steps />
     </>
   );
 };

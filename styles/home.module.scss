@@ -33,15 +33,15 @@ $base-color: #FFB7B2;
     margin-top: 50px;
     font-weight: 300;
   }
+}
 
-  .signUp {
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 15px 40px;
-    border-radius: 30px;
-    width: fit-content;
-    box-shadow: 0px 0px 16px 0px #FFB7B2;
-  }
+.signUp {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 15px 40px !important;
+  border-radius: 30px !important;
+  width: fit-content !important;
+  box-shadow: 0px 0px 16px 0px #FFB7B2;
 }
 
 .title {
@@ -92,6 +92,55 @@ $base-color: #FFB7B2;
   object-position: 0% 50%;
 }
 
+.steps {
+  background-color: #FFECEB;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 80px 0px;
+}
+
+.stepItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 33%;
+  margin-bottom: 20px;
+  padding: 0px 5vw;
+
+  .circle {
+    width: 75px;
+    height: 75px;
+    min-width: 75px;
+    min-height: 75px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .box {
+    border-radius: 40px;
+    background-color: white;
+    padding: 30px;
+    margin-top: 40px;
+  }
+
+  .itemTitle {
+    font-weight: 700;
+    color: rgba(0,0,0,0.85);
+    font-size: 1.4rem;
+  }
+
+  .description {
+    font-weight: 300;
+    color: rgba(0,0,0,0.5);
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .info {
     margin-top: 20px;
@@ -127,6 +176,19 @@ $base-color: #FFB7B2;
   .backgroundScreenshots {
     width: 90vw;
     height: auto;
+  }
+  .steps {
+    flex-direction: column;
+    padding: 40px 0px;
+  }
+  .stepItem {
+    flex-direction: row;
+    margin-top: 20px;
+
+    .box {
+      margin-left: 20px;
+      margin-top: 0px;
+    }
   }
 }
 
