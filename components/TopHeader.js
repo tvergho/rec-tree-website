@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
 import businessStyles from 'styles/business.module.scss';
 import { RecMeLogo, RecMeText, ForMerchantsLogo } from 'components/assets';
@@ -73,7 +74,7 @@ const MobileBackdrop = ({
             );
           } else {
             return (
-              <Link href={link.to}>
+              <Link href={link.to} passHref>
                 <MobileItem
                   title={link.name}
                   key={link.name}
@@ -101,8 +102,8 @@ const HeaderNav = ({ links, color }) => {
           );
         } else {
           return (
-            <Link href={link.to}>
-              <button className={`button-text ${businessStyles.navButton}`} type="button" key={link.name} onClick={link.func} style={{ color }}>{link.name}</button>
+            <Link href={link.to} passHref>
+              <a><button className={`button-text ${businessStyles.navButton}`} type="button" key={link.name} onClick={link.func} style={{ color }}>{link.name}</button></a>
             </Link>
           );
         }
