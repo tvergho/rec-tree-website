@@ -13,7 +13,7 @@ const StatItem = ({
       <motion.div
         className={businessStyles.desc}
         animate={{ opacity: show ? 1 : 0, x: show ? 0 : -30 }}
-        transition={{ duration: 1, delay: position * 0.3 }}
+        transition={{ duration: show ? 1 : 0, delay: show ? position * 0.3 : 0 }}
       >{description}
       </motion.div>
     </div>

@@ -12,7 +12,7 @@ const StepItem = ({
 
       <div className={homeStyles.box}>
         <motion.div
-          animate={{ opacity: show ? 1 : 0, x: show ? 0 : -30, visibility: !show ? 'hidden' : '' }}
+          animate={{ opacity: show ? 1 : 0, x: show ? 0 : -30 }}
           transition={{ duration: show ? 1 : 0, delay: show ? position * 0.2 : 0 }}
         >
           <div className={homeStyles.itemTitle}>{title}</div>
