@@ -5,7 +5,9 @@ import InterestForm from './InterestForm';
 import StatSection from './StatSection';
 import WhyRecMe from './WhyRecMe';
 import WhyItem from './WhyItem';
+import Steps from './Steps';
+import StepItem from './StepItem';
 
 export {
-  FullImageBanner, TopHeader, InterestForm, StatSection, WhyRecMe, WhyItem,
+  FullImageBanner, TopHeader, InterestForm, StatSection, WhyRecMe, WhyItem, Steps, StepItem,
 };

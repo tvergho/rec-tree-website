@@ -5,7 +5,7 @@ import useScrollPosition from 'utils/useScrollPosition';
 import { motion } from 'framer-motion';
 
 const WhyItem = ({
-  color = '#FFB7B2', image, title, description, reversed,
+  color = '#FFB7B2', image, title, highlightedTitle, description, reversed,
 }) => {
   const imgRef = useRef(null);
   const scrolled = useScrollPosition(imgRef, 10);
@@ -26,7 +26,10 @@ const WhyItem = ({
       </div>
 
       <div className={businessStyles.col}>
-        <div className={businessStyles.titleText}>{title}</div>
+        <div className={businessStyles.titleText}>
+          {title}
+          {<span style={{ backgroundColor: color }}>{highlightedTitle}</span>}
+        </div>
         <div className={businessStyles.desc}>{description}</div>
       </div>
     </div>

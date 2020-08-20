@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import { NextSeo } from 'next-seo';
-import { FullImageBanner, WhyRecMe } from 'components/Business';
+import { FullImageBanner, WhyRecMe, Steps } from 'components/Business';
 
-const Home = () => {
+const Business = () => {
   const whyRef = useRef(null);
   const scrollToWhy = () => {
     whyRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -13,13 +13,14 @@ const Home = () => {
   return (
     <>
       <NextSeo
-        title="Home • RecMe"
+        title="Businesses • RecMe"
         description="RecMe allows you to recommend your favorite businesses to your friends. Stay up to date with where your friends are shopping and earn money back for using the app."
       />
       <FullImageBanner headerLinks={HEADER_LINKS} />
       <WhyRecMe inputRef={whyRef} />
+      <Steps />
     </>
   );
 };
 
-export default Home;
+export default Business;

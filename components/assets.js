@@ -20,4 +20,12 @@ const ForMerchantsLogo = ({ width, height, className }) => {
   );
 };
 
-export { RecMeLogo, ForMerchantsLogo };
+const RightArrow = ({ width, style }) => {
+  return (
+    <svg width={width || '73'} height="23" style={style} viewBox="0 0 73 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1.5 10H0V13H1.5V10ZM72.5607 12.5607C73.1464 11.9749 73.1464 11.0251 72.5607 10.4393L63.0147 0.893398C62.4289 0.307611 61.4792 0.307611 60.8934 0.893398C60.3076 1.47919 60.3076 2.42893 60.8934 3.01472L69.3787 11.5L60.8934 19.9853C60.3076 20.5711 60.3076 21.5208 60.8934 22.1066C61.4792 22.6924 62.4289 22.6924 63.0147 22.1066L72.5607 12.5607ZM1.5 13H71.5V10H1.5V13Z" fill="#FFB7B2" />
+    </svg>
+  );
+};
+
+export { RecMeLogo, ForMerchantsLogo, RightArrow };
