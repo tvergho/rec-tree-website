@@ -56,6 +56,13 @@ html {
   font-size: 14px;
 }
 
+body {
+  scroll-snap-type: y proximity;
+  overflow-y: scroll;
+  height: 100vh;
+  position: relative;
+}
+
 .pink-button {
   background-color: $base-color;
   color: white;

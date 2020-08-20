@@ -120,13 +120,13 @@ const TopHeader = ({ links, invert, border }) => {
 
   const openBackdrop = () => {
     setOpen(true);
-    document.querySelector('html').style.overflow = 'hidden';
+    document.querySelector('body').style.overflow = 'hidden';
     window.scrollTo(0, 0);
   };
 
   const closeBackdrop = () => {
     setOpen(false);
-    document.querySelector('html').style.overflow = '';
+    document.querySelector('body').style.overflow = '';
   };
 
   return (

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { NextSeo } from 'next-seo';
 import {
   FullImageBanner, WhyRecMe, Steps, Contact,
@@ -11,6 +11,10 @@ const Business = () => {
   };
 
   const HEADER_LINKS = [{ name: 'Why RecMe?', func: scrollToWhy }, { name: 'Product', to: '/' }, { name: 'Sign in' }];
+
+  useEffect(() => {
+    document.body.scroll(0, 0);
+  }, []);
 
   return (
     <>

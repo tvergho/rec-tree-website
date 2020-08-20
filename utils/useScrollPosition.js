@@ -5,10 +5,10 @@ const useScrollPosition = (ref, offset = 0) => {
   const [scrolled, setScrolled] = useState(false);
 
   useLayoutEffect(() => {
-    const pos = ref.current.getBoundingClientRect().top;
+    const pos = ref.current.offsetTop;
 
     const onScroll = () => {
-      const scrollPos = window.scrollY + window.innerHeight;
+      const scrollPos = document.body.scrollTop + window.innerHeight;
       if (pos + offset < scrollPos) {
         setScrolled(true);
       } else {
@@ -16,8 +16,8 @@ const useScrollPosition = (ref, offset = 0) => {
       }
     };
 
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    document.body.addEventListener('scroll', onScroll);
+    return () => document.body.removeEventListener('scroll', onScroll);
   }, []);
 
   return scrolled;
