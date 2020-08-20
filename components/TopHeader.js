@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import businessStyles from 'styles/business.module.scss';
-import { RecMeLogo, ForMerchantsLogo } from 'components/assets';
+import { RecMeLogo, RecMeText, ForMerchantsLogo } from 'components/assets';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAlignJustify, faTimes, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import useWindowSize from 'utils/useWindowSize';
 import useDelay from 'utils/useDelay';
 import { motion } from 'framer-motion';
+import PropTypes from 'prop-types';
 
 const MOBILE_WIDTH = 960;
 
-const MobileButton = ({ onClick }) => {
+const MobileButton = ({ onClick, color }) => {
   return (
-    <button className={businessStyles.mobileButton} type="button" tabIndex={0} onClick={onClick}>
+    <button className={businessStyles.mobileButton} type="button" tabIndex={0} onClick={onClick} style={{ color }}>
       <FontAwesomeIcon icon={faAlignJustify} size="3x" />
     </button>
   );
@@ -74,21 +75,22 @@ const MobileBackdrop = ({
   );
 };
 
-const HeaderNav = ({ links }) => {
+const HeaderNav = ({ links, color }) => {
   return (
     <nav>
       {links.map((link) => {
         return (
-          <button className={`button-text ${businessStyles.navButton}`} type="button" key={link.name} onClick={link.func}>{link.name}</button>
+          <button className={`button-text ${businessStyles.navButton}`} type="button" key={link.name} onClick={link.func} style={{ color }}>{link.name}</button>
         );
       })}
     </nav>
   );
 };
 
-const TopHeader = ({ links }) => {
+const TopHeader = ({ links, invert, border }) => {
   const [open, setOpen] = useState(false);
   const { width } = useWindowSize();
+  const color = invert ? '#FFB7B2' : 'white';
 
   const openBackdrop = () => {
     setOpen(true);
@@ -103,10 +105,10 @@ const TopHeader = ({ links }) => {
 
   return (
     <>
-      <header className={businessStyles.header}>
+      <header className={businessStyles.header} style={border ? { borderBottom: '1px solid rgba(0,0,0,0.1)' } : {}}>
         <div>
-          <RecMeLogo />
-          <ForMerchantsLogo className={businessStyles.merchantLogo} />
+          <RecMeLogo color={color} />
+          {invert ? <RecMeText style={{ marginLeft: 15 }} /> : <ForMerchantsLogo style={{ marginLeft: 15 }} />}
           <style jsx>
             {`
             display: flex;
@@ -115,11 +117,21 @@ const TopHeader = ({ links }) => {
           </style>
         </div>
 
-        {width > MOBILE_WIDTH ? <HeaderNav links={links} /> : <MobileButton onClick={openBackdrop} />}
+        {width > MOBILE_WIDTH ? <HeaderNav links={links} color={color} /> : <MobileButton onClick={openBackdrop} color={color} />}
       </header>
       <MobileBackdrop isOpen={open} close={closeBackdrop} links={links} />
     </>
   );
+};
+
+TopHeader.propTypes = {
+  links: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    func: PropTypes.func,
+    to: PropTypes.string,
+  })).isRequired,
+  invert: PropTypes.bool,
+  border: PropTypes.bool,
 };
 
 export default TopHeader;

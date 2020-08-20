@@ -16,7 +16,7 @@ const Business = () => {
     <>
       <NextSeo
         title="Businesses • RecMe"
-        description="RecMe allows you to recommend your favorite businesses to your friends. Stay up to date with where your friends are shopping and earn money back for using the app."
+        description="RecMe allows you to recommend your favorite businesses to your friends. Now enrolling businesses near the UC Berkeley and Cornell campuses."
       />
       <FullImageBanner headerLinks={HEADER_LINKS} />
       <WhyRecMe inputRef={whyRef} />

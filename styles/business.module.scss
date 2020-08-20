@@ -42,10 +42,6 @@ $base-color: #FFB7B2;
   justify-content: space-between;
   padding: 30px;
 
-  .merchantLogo {
-    margin-left: 15px;
-  }
-
   nav {
     display: flex;
     flex: 0 1 auto;
@@ -100,6 +96,7 @@ $base-color: #FFB7B2;
   color: rgba(0,0,0,0.7);
   font-weight: 700;
   cursor: pointer;
+  transition: all 0.3s;
 }
 .mobileItem:hover {
   background-color: rgba(0,0,0,0.05);
