@@ -52,7 +52,6 @@ const Features = ({ inputRef }) => {
   const [selected, setSelected] = useState(0);
 
   const onClick = (e) => {
-    console.log(parseInt(e.target.dataset.index, 10));
     setSelected(parseInt(e.target.dataset.index, 10));
   };
 

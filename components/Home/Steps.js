@@ -39,7 +39,7 @@ const Steps = () => {
       <StepItem
         color="#E2F0CB"
         title="Connect your card"
-        description="Connect your bank account online or in-app. We use 256-bit encrypion and read-only access."
+        description="Connect your bank account online or in-app. We use 256-bit encryption and read-only access."
         position={2}
         show={scrolled}
       />
