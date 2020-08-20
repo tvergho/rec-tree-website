@@ -88,3 +88,9 @@ body {
         font-size: 22px;
     }
 }
+
+@media screen and (max-width: 768px) {
+  body {
+    scroll-snap-type: none;
+  }  
+}
