@@ -143,7 +143,7 @@ const TopHeader = ({ links, invert, border }) => {
           </style>
         </div>
 
-        {width > MOBILE_WIDTH ? <HeaderNav links={links} color={color} /> : <MobileButton onClick={openBackdrop} color={color} />}
+        {width > MOBILE_WIDTH && typeof window !== 'undefined' ? <HeaderNav links={links} color={color} /> : <MobileButton onClick={openBackdrop} color={color} />}
       </header>
       <MobileBackdrop isOpen={open} close={closeBackdrop} links={links} />
     </>

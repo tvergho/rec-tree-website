@@ -1,5 +1,5 @@
 /* eslint-disable global-require */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import homeStyles from 'styles/home.module.scss';
 import { ActionButton } from './index';
 
@@ -55,6 +55,13 @@ const Features = ({ inputRef }) => {
     console.log(parseInt(e.target.dataset.index, 10));
     setSelected(parseInt(e.target.dataset.index, 10));
   };
+
+  useEffect(() => {
+    BUTTONS.forEach((button) => {
+      const img = new Image();
+      img.src = button.image;
+    });
+  }, []);
 
   return (
     <div className={homeStyles.features} ref={inputRef}>
