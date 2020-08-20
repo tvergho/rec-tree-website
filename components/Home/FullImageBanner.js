@@ -17,10 +17,10 @@ const LeftCol = () => {
   );
 };
 
-const FullImageBanner = () => {
+const FullImageBanner = ({ headerLinks }) => {
   return (
     <>
-      <TopHeader />
+      <TopHeader links={headerLinks} />
       <div className={homeStyles.fullImage}>
         <LeftCol />
         <InterestForm />

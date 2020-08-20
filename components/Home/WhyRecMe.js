@@ -3,9 +3,9 @@ import React from 'react';
 import homeStyles from 'styles/home.module.scss';
 import { StatSection, WhyItem } from './index';
 
-const WhyRecMe = () => {
+const WhyRecMe = ({ inputRef }) => {
   return (
-    <div className={homeStyles.whySection}>
+    <div className={homeStyles.whySection} ref={inputRef}>
       <StatSection />
       <WhyItem
         title="Turn customers into passionate advocates."
