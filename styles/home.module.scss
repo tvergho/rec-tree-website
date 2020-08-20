@@ -7,6 +7,7 @@ $base-color: #FFB7B2;
   flex-direction: row;
   padding: 30px;
   padding-top: 120px;
+  position: relative;
 }
 
 .col {
@@ -32,21 +33,21 @@ $base-color: #FFB7B2;
     margin-top: 50px;
     font-weight: 300;
   }
+
+  .signUp {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 15px 40px;
+    border-radius: 30px;
+    width: fit-content;
+    box-shadow: 0px 0px 16px 0px #FFB7B2;
+  }
 }
 
 .title {
   font-size: 3rem;
   font-weight: 700;
   line-height: 1.1;
-}
-
-.signUp {
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 15px 40px;
-  border-radius: 30px;
-  width: fit-content;
-  box-shadow: 0px 0px 16px 0px #FFB7B2;
 }
 
 .colleges {
@@ -77,16 +78,28 @@ $base-color: #FFB7B2;
   }
 }
 
+.imageContainer {
+  padding: 0;
+  position: absolute;
+  top: 20px;
+  right: -100px;
+}
+
+.backgroundScreenshots {
+  height: calc(100vh - 120px);
+  width: auto;
+  object-fit: cover;
+  object-position: 0% 50%;
+}
+
 @media screen and (max-width: 1200px) {
+  .info {
+    margin-top: 20px;
+  }
   .col {
-    margin-top: 20px !important;
     padding-left: 0px !important;
     padding-right: 20px !important;
     padding-bottom: 0px !important;
-
-    .info {
-      margin-top: 20px;
-    }
   }
 }
 
@@ -97,6 +110,7 @@ $base-color: #FFB7B2;
   .col {
     flex: 0 1 100% !important;
     width: 100vw !important;
+    margin-top: 50px;
     margin-bottom: 20px;
     align-items: center;
     text-align: center;
@@ -104,6 +118,15 @@ $base-color: #FFB7B2;
   .colleges {
     margin-top: 50px;
     text-align: center !important;
+  }
+  .imageContainer {
+    position: relative;
+    margin: 0;
+    right: 0;
+  }
+  .backgroundScreenshots {
+    width: 90vw;
+    height: auto;
   }
 }
 

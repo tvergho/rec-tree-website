@@ -130,7 +130,7 @@ const TopHeader = ({ links, invert, border }) => {
 
   return (
     <>
-      <header className={businessStyles.header} style={border ? { borderBottom: '1px solid rgba(0,0,0,0.1)' } : {}}>
+      <header className={businessStyles.header} style={{ borderBottom: border ? '1px solid rgba(0,0,0,0.1)' : '', backgroundColor: invert ? 'white' : '' }}>
         <div>
           <RecMeLogo color={color} />
           {invert ? <RecMeText style={{ marginLeft: 15 }} /> : <ForMerchantsLogo style={{ marginLeft: 15 }} />}

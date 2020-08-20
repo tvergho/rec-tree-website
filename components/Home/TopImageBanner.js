@@ -29,10 +29,19 @@ const LeftCol = () => {
   );
 };
 
+const RightCol = () => {
+  return (
+    <div className={`${homeStyles.col} ${homeStyles.imageContainer}`}>
+      <img src={require('public/background-screenshots.png')} alt="App screenshots" className={homeStyles.backgroundScreenshots} />
+    </div>
+  );
+};
+
 const TopImageBanner = () => {
   return (
     <div className={homeStyles.topImage}>
       <LeftCol />
+      <RightCol />
     </div>
   );
 };
