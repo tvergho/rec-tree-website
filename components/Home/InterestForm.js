@@ -15,6 +15,8 @@ const useStyles = makeStyles({
 });
 
 const Submitted = ({ display, height }) => {
+  const delayed = useDelay(display, 100, true, true);
+
   const style = {
     display: display ? 'flex' : 'none',
     flexDirection: 'column',
@@ -25,7 +27,7 @@ const Submitted = ({ display, height }) => {
   return (
     <motion.div style={style} animate={{ opacity: display ? 1 : 0 }}>
       <div className={homeStyles.subheader} style={{ textAlign: 'center' }}>Your response has been submitted.</div>
-      <Confirm width={100} height={100} />
+      {delayed ? <Confirm width={100} height={100} /> : <div style={{ width: 100, height: 100 }} />}
     </motion.div>
   );
 };

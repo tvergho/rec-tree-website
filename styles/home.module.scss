@@ -9,25 +9,26 @@ $base-color: #FFB7B2;
   flex-direction: row;
   padding: 30px;
   padding-top: 120px;
+}
 
-  .col {
-    width: 50vw; 
-    flex: 0 1 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    padding: 0px 5vw;
-    margin-top: 100px;
+.col {
+  width: 50vw; 
+  flex: 0 1 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  padding: 0px 5vw;
+  margin-top: 100px;
+  position: relative;
 
-    .infoBold {
-      font-size: 3rem;
-      font-weight: 700;
-    }
-    .info {
-      font-size: 1.6rem;
-      font-weight: 300;
-    }
+  .infoBold {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+  .info {
+    font-size: 1.6rem;
+    font-weight: 300;
   }
 }
 
@@ -157,6 +158,37 @@ $base-color: #FFB7B2;
   }
 }
 
+.whyItem {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+
+  .desc {
+    color: #888888;
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin-top: 10px;
+  }
+
+  .objectRectangle, object {
+    height: 30vh;
+    min-width: 35vw;
+    width: 35vw;
+    object-fit: cover;
+  }
+
+  .objectRectangle {
+    position: absolute;
+  }
+
+  object {
+    opacity: 0.6;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .col {
     margin-top: 20px !important;
@@ -177,6 +209,14 @@ $base-color: #FFB7B2;
 
     .statItem {
       margin-bottom: 30px;
+    }
+  }
+  .whyItem {
+    flex-direction: column-reverse !important;
+
+    .objectRectangle, object {
+      min-width: 100%;
+      width: 100%;
     }
   }
   .col {
