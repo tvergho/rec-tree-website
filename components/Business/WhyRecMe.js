@@ -7,7 +7,7 @@ import { StatSection, WhyItem } from './index';
 const WhyRecMe = ({ inputRef }) => {
   return (
     <div className={businessStyles.whySection} ref={inputRef}>
-      <StatSection />
+      <StatSection title="Why RecMe?" />
       <WhyItem
         title="Turn customers into "
         highlightedTitle="passionate advocates."

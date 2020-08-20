@@ -102,7 +102,7 @@ const InterestForm = () => {
             classes={{ root: classes.bottomMargin }}
             onChange={onChange}
             value={values.businessName}
-            error={errors.businessName}
+            error={!!errors.businessName}
             helperText={errors.businessName}
           />
           <TextField
@@ -113,7 +113,7 @@ const InterestForm = () => {
             classes={{ root: classes.bottomMargin }}
             onChange={onChange}
             value={values.address}
-            error={errors.address}
+            error={!!errors.address}
             helperText={errors.address}
           />
           <TextField
@@ -123,7 +123,7 @@ const InterestForm = () => {
             fullWidth
             onChange={onChange}
             value={values.phone}
-            error={errors.phone}
+            error={!!errors.phone}
             helperText={errors.phone}
           />
 
@@ -137,7 +137,7 @@ const InterestForm = () => {
             classes={{ root: classes.bottomMargin }}
             onChange={onChange}
             value={values.contactName}
-            error={errors.contactName}
+            error={!!errors.contactName}
             helperText={errors.contactName}
           />
           <TextField
@@ -147,7 +147,7 @@ const InterestForm = () => {
             fullWidth
             onChange={onChange}
             value={values.email}
-            error={errors.email}
+            error={!!errors.email}
             helperText={errors.email}
           />
 

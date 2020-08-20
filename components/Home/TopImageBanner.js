@@ -1,6 +1,7 @@
 /* eslint-disable global-require */
 import React from 'react';
 import homeStyles from 'styles/home.module.scss';
+import { ActionButton } from './index';
 
 const CollegeImage = ({ image, title }) => {
   return (
@@ -13,12 +14,12 @@ const CollegeImage = ({ image, title }) => {
 const LeftCol = () => {
   return (
     <div className={homeStyles.col}>
-      <div className={homeStyles.smallPink}>INTRODUCING RECME</div>
+      <div className={homeStyles.small}>INTRODUCING RECME</div>
       <div className={homeStyles.title} style={{ color: 'rgba(0,0,0,0.85)' }}>Rewards for recommendations.</div>
       <div className={homeStyles.info} style={{}}>RecMe rewards you for referring your favorite stores to friends. We connect with your bank account to see if you’ve bought from eligible stores.</div>
 
       <div style={{ marginTop: 50 }}>
-        <button type="button" className={`pink-button ${homeStyles.signUp}`}>Sign Up</button>
+        <ActionButton>Sign Up</ActionButton>
         <div className={homeStyles.colleges}>
           <div>Currently at</div>
           <CollegeImage image={require('public/cornell.png')} label="Cornell University" />

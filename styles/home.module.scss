@@ -21,18 +21,18 @@ $base-color: #FFB7B2;
   margin-top: 100px;
   position: relative;
 
-  .smallPink {
-    color: $base-color;
-    font-size: 1rem;
-    font-weight: 500;
-  }
-
   .info {
     color: rgba(0,0,0,0.6);
     font-size: 1.6rem;
     margin-top: 50px;
     font-weight: 300;
   }
+}
+
+.small {
+  color: $base-color;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .signUp {
@@ -138,6 +138,37 @@ $base-color: #FFB7B2;
     color: rgba(0,0,0,0.5);
     font-size: 1rem;
     margin-top: 20px;
+  }
+}
+
+.features {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  padding-top: 100px;
+  padding-left: 8vw;
+  position: relative;
+  background-color: #342020;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 40px;
+
+  .featureButton {
+    margin-right: 15px;
+    border-radius: 30px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 15px 30px;
+    border: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
   }
 }
 

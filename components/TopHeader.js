@@ -38,10 +38,12 @@ const CloseButton = ({ close }) => {
 
 const MobileItem = ({ title, onClick }) => {
   return (
-    <div className={businessStyles.mobileItem} onClick={onClick} role="button" tabIndex={0}>
-      <div>{title}</div>
-      <FontAwesomeIcon icon={faChevronRight} size="2x" />
-    </div>
+    <a>
+      <div className={businessStyles.mobileItem} onClick={onClick} role="button" tabIndex={0}>
+        <div>{title}</div>
+        <FontAwesomeIcon icon={faChevronRight} size="2x" />
+      </div>
+    </a>
   );
 };
 
@@ -74,10 +76,9 @@ const MobileBackdrop = ({
             );
           } else {
             return (
-              <Link href={link.to} passHref>
+              <Link href={link.to} passHref key={link.name}>
                 <MobileItem
                   title={link.name}
-                  key={link.name}
                   onClick={() => {
                     close();
                     if (link?.func) link.func();
@@ -102,8 +103,8 @@ const HeaderNav = ({ links, color }) => {
           );
         } else {
           return (
-            <Link href={link.to} passHref>
-              <a><button className={`button-text ${businessStyles.navButton}`} type="button" key={link.name} onClick={link.func} style={{ color }}>{link.name}</button></a>
+            <Link href={link.to} passHref key={link.name}>
+              <a><button className={`button-text ${businessStyles.navButton}`} type="button" onClick={link.func} style={{ color }}>{link.name}</button></a>
             </Link>
           );
         }
