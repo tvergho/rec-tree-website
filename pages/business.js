@@ -15,7 +15,7 @@ const Business = () => {
   return (
     <>
       <NextSeo
-        title="Businesses • RecMe"
+        title="Merchants • RecMe"
         description="RecMe allows you to recommend your favorite businesses to your friends. Now enrolling businesses near the UC Berkeley and Cornell campuses."
       />
       <FullImageBanner headerLinks={HEADER_LINKS} />
