@@ -1,0 +1,117 @@
+$base-color: #FFB7B2;
+
+.topImage {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+  padding-top: 120px;
+}
+
+.col {
+  width: 50vw; 
+  flex: 0 1 50%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding-right: 2vw;
+  padding-left: 8vw;
+  margin-top: 100px;
+  position: relative;
+
+  .smallPink {
+    color: $base-color;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .info {
+    color: rgba(0,0,0,0.6);
+    font-size: 1.6rem;
+    margin-top: 50px;
+    font-weight: 300;
+  }
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.signUp {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 15px 40px;
+  border-radius: 30px;
+  width: fit-content;
+  box-shadow: 0px 0px 16px 0px #FFB7B2;
+}
+
+.colleges {
+  color: rgba(0,0,0,0.5);
+  font-size: 1.4rem;
+  font-weight: 300;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+
+  .collegeImage {
+    border-radius: 150px;
+    width: min(135px, 15vw);
+    height: min(135px, 15vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5), 0px 0px 3px 0px rgba(0,0,0,0.2);
+    margin-left: 25px;
+
+    object {
+      width: 66%;
+      height: 66%;
+      object-fit: contain;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .col {
+    margin-top: 20px !important;
+    padding-left: 0px !important;
+    padding-right: 20px !important;
+    padding-bottom: 0px !important;
+
+    .info {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .topImage {
+    flex-direction: column !important;
+  }
+  .col {
+    flex: 0 1 100% !important;
+    width: 100vw !important;
+    margin-bottom: 20px;
+    align-items: center;
+    text-align: center;
+  }
+  .colleges {
+    margin-top: 50px;
+    text-align: center !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .title {
+    font-size: 2rem !important;
+  }
+  .colleges {
+    font-size: 1.2rem;
+  }
+}
