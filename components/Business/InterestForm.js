@@ -7,6 +7,17 @@ import Confirm from 'components/lottie/confirm';
 import { motion } from 'framer-motion';
 import useDelay from 'utils/useDelay';
 import useForm from 'utils/useForm';
+import { gql, useMutation } from '@apollo/client';
+import { stripPhone } from 'utils/formatPhone';
+
+const ADD_INTERESTED_BUSINESS = gql`
+mutation create ($business: InterestedBusinessInput!) {
+    createInterestedBusiness(input: $business) {
+      business_name
+      email
+    }
+  }
+`;
 
 const useStyles = makeStyles({
   bottomMargin: {
@@ -33,6 +44,8 @@ const Submitted = ({ display, height }) => {
 };
 
 const InterestForm = () => {
+  const [addBusiness] = useMutation(ADD_INTERESTED_BUSINESS);
+
   const classes = useStyles();
   let form = useRef();
   const [formHeight, setFormHeight] = useState(0);
@@ -59,6 +72,18 @@ const InterestForm = () => {
   const onSubmit = () => {
     if (!validateInput()) {
       setSubmitted(true);
+
+      const {
+        contactName, phone, businessName, address, email,
+      } = values;
+      const business = {
+        phone: stripPhone(phone),
+        contactName,
+        businessName,
+        address,
+        email,
+      };
+      addBusiness({ variables: { business } });
     }
   };
 

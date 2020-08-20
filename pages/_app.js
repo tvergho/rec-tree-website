@@ -2,6 +2,11 @@ import React from 'react';
 import 'styles/global.scss';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
+import {
+  ApolloClient, InMemoryCache, ApolloProvider, createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import fetch from 'node-fetch';
 
 export const theme = createMuiTheme({
   palette: {
@@ -24,6 +29,32 @@ export const theme = createMuiTheme({
   },
 });
 
+const httpLink = createHttpLink({
+  uri: 'https://2y6zm2jmsjbbtia5dcaxd5v7si.appsync-api.us-east-2.amazonaws.com/graphql',
+  fetch,
+});
+
+const authLink = setContext((_, { headers }) => {
+  return new Promise((resolve, reject) => {
+    resolve({
+      headers: {
+        'x-api-key': 'da2-yg2rs7rp2rhtlbi572inwrhthq',
+      },
+    });
+  });
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache({
+    typePolicies: {
+      InterestedBusiness: {
+        keyFields: ['email'],
+      },
+    },
+  }),
+});
+
 export default function App({ Component, pageProps }) {
   React.useEffect(() => {
     // Remove the server-side injected CSS.
@@ -34,8 +65,10 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   return (
-    <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <ApolloProvider client={client}>
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </ApolloProvider>
   );
 }

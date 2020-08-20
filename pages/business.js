@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import { NextSeo } from 'next-seo';
-import { FullImageBanner, WhyRecMe, Steps } from 'components/Business';
+import {
+  FullImageBanner, WhyRecMe, Steps, Contact,
+} from 'components/Business';
 
 const Business = () => {
   const whyRef = useRef(null);
@@ -19,6 +21,7 @@ const Business = () => {
       <FullImageBanner headerLinks={HEADER_LINKS} />
       <WhyRecMe inputRef={whyRef} />
       <Steps />
+      <Contact />
     </>
   );
 };
