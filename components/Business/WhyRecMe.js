@@ -1,11 +1,12 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable global-require */
 import React from 'react';
-import homeStyles from 'styles/home.module.scss';
+import businessStyles from 'styles/business.module.scss';
 import { StatSection, WhyItem } from './index';
 
 const WhyRecMe = ({ inputRef }) => {
   return (
-    <div className={homeStyles.whySection} ref={inputRef}>
+    <div className={businessStyles.whySection} ref={inputRef}>
       <StatSection />
       <WhyItem
         title="Turn customers into passionate advocates."

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import homeStyles from 'styles/home.module.scss';
+import businessStyles from 'styles/business.module.scss';
 import { RecMeLogo, ForMerchantsLogo } from 'components/assets';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAlignJustify, faTimes, faChevronRight } from '@fortawesome/free-solid-svg-icons';
@@ -11,7 +11,7 @@ const MOBILE_WIDTH = 960;
 
 const MobileButton = ({ onClick }) => {
   return (
-    <button className={homeStyles.mobileButton} type="button" tabIndex={0} onClick={onClick}>
+    <button className={businessStyles.mobileButton} type="button" tabIndex={0} onClick={onClick}>
       <FontAwesomeIcon icon={faAlignJustify} size="3x" />
     </button>
   );
@@ -20,7 +20,7 @@ const MobileButton = ({ onClick }) => {
 const CloseButton = ({ close }) => {
   return (
     <button
-      className={homeStyles.mobileButton}
+      className={businessStyles.mobileButton}
       style={{
         position: 'absolute', right: '20px', top: '20px', color: 'rgba(0,0,0,0.7)',
       }}
@@ -35,7 +35,7 @@ const CloseButton = ({ close }) => {
 
 const MobileItem = ({ title, onClick }) => {
   return (
-    <div className={homeStyles.mobileItem} onClick={onClick} role="button" tabIndex={0}>
+    <div className={businessStyles.mobileItem} onClick={onClick} role="button" tabIndex={0}>
       <div>{title}</div>
       <FontAwesomeIcon icon={faChevronRight} size="2x" />
     </div>
@@ -49,7 +49,7 @@ const MobileBackdrop = ({
 
   return (
     <motion.div
-      className={homeStyles.mobileBackdrop}
+      className={businessStyles.mobileBackdrop}
       onScroll={(e) => { e.preventDefault(); }}
       style={{ display: delayedClose ? 'flex' : 'none' }}
       animate={{ opacity: isOpen ? 1 : 0 }}
@@ -79,7 +79,7 @@ const HeaderNav = ({ links }) => {
     <nav>
       {links.map((link) => {
         return (
-          <button className={`button-text ${homeStyles.navButton}`} type="button" key={link.name} onClick={link.func}>{link.name}</button>
+          <button className={`button-text ${businessStyles.navButton}`} type="button" key={link.name} onClick={link.func}>{link.name}</button>
         );
       })}
     </nav>
@@ -103,10 +103,10 @@ const TopHeader = ({ links }) => {
 
   return (
     <>
-      <header className={homeStyles.header}>
+      <header className={businessStyles.header}>
         <div>
           <RecMeLogo />
-          <ForMerchantsLogo className={homeStyles.merchantLogo} />
+          <ForMerchantsLogo className={businessStyles.merchantLogo} />
           <style jsx>
             {`
             display: flex;

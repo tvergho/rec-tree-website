@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { NextSeo } from 'next-seo';
-import { FullImageBanner, WhyRecMe } from 'components/Home';
+import { FullImageBanner, WhyRecMe } from 'components/Business';
 
 const Home = () => {
   const whyRef = useRef(null);

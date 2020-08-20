@@ -1,6 +1,6 @@
 /* eslint-disable no-return-assign */
 import React, { useState, useEffect, useRef } from 'react';
-import homeStyles from 'styles/home.module.scss';
+import businessStyles from 'styles/business.module.scss';
 import { TextField } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Confirm from 'components/lottie/confirm';
@@ -26,7 +26,7 @@ const Submitted = ({ display, height }) => {
   };
   return (
     <motion.div style={style} animate={{ opacity: display ? 1 : 0 }}>
-      <div className={homeStyles.subheader} style={{ textAlign: 'center' }}>Your response has been submitted.</div>
+      <div className={businessStyles.subheader} style={{ textAlign: 'center' }}>Your response has been submitted.</div>
       {delayed ? <Confirm width={100} height={100} /> : <div style={{ width: 100, height: 100 }} />}
     </motion.div>
   );
@@ -63,11 +63,11 @@ const InterestForm = () => {
   };
 
   return (
-    <div className={homeStyles.col}>
-      <div className={homeStyles.interestForm}>
+    <div className={businessStyles.col}>
+      <div className={businessStyles.interestForm}>
         <motion.div style={delayedClose ? { display: 'none' } : {}} ref={(ref) => form = ref} animate={{ opacity: submitted ? 0 : 1 }}>
-          <div className={homeStyles.headerText}>Sign up for our beta</div>
-          <div className={homeStyles.subheader}>We’ll contact you prior to the beta release of RecMe, and you can de-activate the platform at any time.</div>
+          <div className={businessStyles.headerText}>Sign up for our beta</div>
+          <div className={businessStyles.subheader}>We’ll contact you prior to the beta release of RecMe, and you can de-activate the platform at any time.</div>
 
           <TextField
             variant="outlined"
@@ -126,7 +126,7 @@ const InterestForm = () => {
             helperText={errors.email}
           />
 
-          <button className={homeStyles.submitButton} type="submit" onClick={onSubmit}>Become a partner</button>
+          <button className={businessStyles.submitButton} type="submit" onClick={onSubmit}>Become a partner</button>
         </motion.div>
 
         <Submitted display={delayedClose} height={formHeight} />
