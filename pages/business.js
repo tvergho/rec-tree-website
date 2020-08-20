@@ -10,7 +10,7 @@ const Business = () => {
     whyRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const HEADER_LINKS = [{ name: 'Why RecMe?', func: scrollToWhy }, { name: 'Product' }, { name: 'Sign in' }];
+  const HEADER_LINKS = [{ name: 'Why RecMe?', func: scrollToWhy }, { name: 'Product', to: '/' }, { name: 'Sign in' }];
 
   return (
     <>

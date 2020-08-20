@@ -7,6 +7,7 @@ import useWindowSize from 'utils/useWindowSize';
 import useDelay from 'utils/useDelay';
 import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 
 const MOBILE_WIDTH = 960;
 
@@ -59,16 +60,31 @@ const MobileBackdrop = ({
 
       <div style={{ marginTop: 50 }}>
         {links.map((link) => {
-          return (
-            <MobileItem
-              title={link.name}
-              key={link.name}
-              onClick={() => {
-                close();
-                if (link?.func) link.func();
-              }}
-            />
-          );
+          if (!link.to) {
+            return (
+              <MobileItem
+                title={link.name}
+                key={link.name}
+                onClick={() => {
+                  close();
+                  if (link?.func) link.func();
+                }}
+              />
+            );
+          } else {
+            return (
+              <Link href={link.to}>
+                <MobileItem
+                  title={link.name}
+                  key={link.name}
+                  onClick={() => {
+                    close();
+                    if (link?.func) link.func();
+                  }}
+                />
+              </Link>
+            );
+          }
         })}
       </div>
     </motion.div>
@@ -79,9 +95,17 @@ const HeaderNav = ({ links, color }) => {
   return (
     <nav>
       {links.map((link) => {
-        return (
-          <button className={`button-text ${businessStyles.navButton}`} type="button" key={link.name} onClick={link.func} style={{ color }}>{link.name}</button>
-        );
+        if (!link.to) {
+          return (
+            <button className={`button-text ${businessStyles.navButton}`} type="button" key={link.name} onClick={link.func} style={{ color }}>{link.name}</button>
+          );
+        } else {
+          return (
+            <Link href={link.to}>
+              <button className={`button-text ${businessStyles.navButton}`} type="button" key={link.name} onClick={link.func} style={{ color }}>{link.name}</button>
+            </Link>
+          );
+        }
       })}
     </nav>
   );
