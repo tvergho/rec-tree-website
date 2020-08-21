@@ -1,5 +1,3 @@
-/* eslint-disable global-require */
-/* eslint-disable import/no-cycle */
 import React, { useRef } from 'react';
 import businessStyles from 'styles/business.module.scss';
 import { RightArrow } from 'components/assets';

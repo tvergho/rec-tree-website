@@ -1,5 +1,3 @@
-/* eslint-disable import/no-cycle */
-/* eslint-disable global-require */
 import React from 'react';
 import businessStyles from 'styles/business.module.scss';
 import { StatSection, WhyItem } from './index';

@@ -1,4 +1,3 @@
-/* eslint-disable global-require */
 import React, { useState, useEffect } from 'react';
 import homeStyles from 'styles/home.module.scss';
 import { ActionButton } from './index';

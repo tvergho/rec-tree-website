@@ -1,4 +1,12 @@
-/* eslint-disable no-use-before-define */
+const stripPhone = (phone) => {
+  let strippedPhone = phone;
+  strippedPhone = strippedPhone.replace(' ', '');
+  strippedPhone = strippedPhone.replace('(', '');
+  strippedPhone = strippedPhone.replace(')', '');
+  strippedPhone = strippedPhone.replace('-', '');
+  return `+1${strippedPhone}`;
+};
+
 const formatPhone = (newText, prevPhone) => {
   const isnum = /^\d+$/.test(stripPhone(newText).slice(1));
   if (!isnum) return prevPhone;
@@ -21,15 +29,6 @@ const formatPhone = (newText, prevPhone) => {
     formattedPhone = `${formattedPhone.slice(0, 9)}-${formattedPhone.slice(9, formattedPhone.length)}`;
   }
   return formattedPhone;
-};
-
-const stripPhone = (phone) => {
-  let strippedPhone = phone;
-  strippedPhone = strippedPhone.replace(' ', '');
-  strippedPhone = strippedPhone.replace('(', '');
-  strippedPhone = strippedPhone.replace(')', '');
-  strippedPhone = strippedPhone.replace('-', '');
-  return `+1${strippedPhone}`;
 };
 
 export { formatPhone, stripPhone };

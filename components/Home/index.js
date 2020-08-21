@@ -1,4 +1,3 @@
-/* eslint-disable import/no-cycle */
 import TopImageBanner from './TopImageBanner';
 import Steps from './Steps';
 import ActionButton from './ActionButton';

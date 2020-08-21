@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useLayoutEffect } from 'react';
 
 const useScrollPosition = (ref, offset = 0) => {
