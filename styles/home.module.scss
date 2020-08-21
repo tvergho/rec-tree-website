@@ -62,6 +62,7 @@ $base-color: #FFB7B2;
 
   .collegeImage {
     border-radius: 150px;
+    min-width: min(135px, 15vw);
     width: min(135px, 15vw);
     height: min(135px, 15vw);
     display: flex;
@@ -214,7 +215,7 @@ $base-color: #FFB7B2;
     height: 80vh;
   }
   .textContainer {
-    padding-right: 40px;
+    padding-right: 100px;
   }
 }
 
@@ -222,6 +223,9 @@ $base-color: #FFB7B2;
   .topImage {
     flex-direction: column !important;
     padding-right: 0px;
+  }
+  .textContainer {
+    padding-right: 0px !important;
   }
   .col {
     flex: 0 1 100% !important;
