@@ -92,7 +92,7 @@ const InterestForm = () => {
       <div className={businessStyles.interestForm}>
         <motion.div style={delayedClose ? { display: 'none' } : {}} ref={(ref) => form = ref} animate={{ opacity: submitted ? 0 : 1 }}>
           <div className={businessStyles.headerText}>Sign up for our beta</div>
-          <div className={businessStyles.subheader}>We’ll contact you prior to the beta release of RecMe, and you can de-activate the platform at any time.</div>
+          <div className={businessStyles.subheader}>We’ll contact you prior to the beta release of RecTree, and you can de-activate the platform at any time.</div>
 
           <TextField
             variant="outlined"

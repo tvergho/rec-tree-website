@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
 import businessStyles from 'styles/business.module.scss';
-import { RecMeLogo, RecMeText, ForMerchantsLogo } from 'components/assets';
+import { Logo, RecTreeText, ForMerchantsLogo } from 'components/assets';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAlignJustify, faTimes, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import useWindowSize from 'utils/useWindowSize';
@@ -133,8 +133,8 @@ const TopHeader = ({ links, invert, border }) => {
     <>
       <header className={businessStyles.header} style={{ borderBottom: border ? '1px solid rgba(0,0,0,0.1)' : '', backgroundColor: invert ? 'white' : '' }}>
         <div>
-          <RecMeLogo color={color} />
-          {invert ? <RecMeText style={{ marginLeft: 15 }} /> : <ForMerchantsLogo style={{ marginLeft: 15 }} />}
+          <Logo color={color} />
+          {invert ? <RecTreeText style={{ marginLeft: 15 }} /> : <ForMerchantsLogo style={{ marginLeft: 15 }} />}
           <style jsx>
             {`
             display: flex;

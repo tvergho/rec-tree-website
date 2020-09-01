@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { NextSeo } from 'next-seo';
 import {
-  FullImageBanner, WhyRecMe, Steps, Contact,
+  FullImageBanner, WhyRecTree, Steps, Contact,
 } from 'components/Business';
 
 const Business = () => {
@@ -10,7 +10,7 @@ const Business = () => {
     whyRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const HEADER_LINKS = [{ name: 'Why RecMe?', func: scrollToWhy }, { name: 'Product', to: '/' }, { name: 'Sign in' }];
+  const HEADER_LINKS = [{ name: 'Why RecTree?', func: scrollToWhy }, { name: 'Product', to: '/' }, { name: 'Sign in' }];
 
   useEffect(() => {
     document.body.scroll(0, 0);
@@ -19,11 +19,11 @@ const Business = () => {
   return (
     <>
       <NextSeo
-        title="Merchants • RecMe"
-        description="RecMe allows you to recommend your favorite businesses to your friends. Now enrolling businesses near the UC Berkeley and Cornell campuses."
+        title="Merchants • RecTree"
+        description="RecTree allows you to recommend your favorite businesses to your friends. Now enrolling businesses near the UC Berkeley and Cornell campuses."
       />
       <FullImageBanner headerLinks={HEADER_LINKS} />
-      <WhyRecMe inputRef={whyRef} />
+      <WhyRecTree inputRef={whyRef} />
       <Steps />
       <Contact />
     </>

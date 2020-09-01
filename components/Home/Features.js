@@ -64,7 +64,7 @@ const Features = ({ inputRef }) => {
   return (
     <div className={homeStyles.features} ref={inputRef}>
       <div className={homeStyles.small}>FEATURES</div>
-      <div className={homeStyles.title} style={{ color: 'white' }}>What&#39;s in RecMe?</div>
+      <div className={homeStyles.title} style={{ color: 'white' }}>What&#39;s in RecTree?</div>
 
       <Buttons buttons={BUTTONS} selected={selected} onClick={onClick} />
 

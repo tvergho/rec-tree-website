@@ -13,9 +13,9 @@ const CollegeImage = ({ image, title }) => {
 const LeftCol = () => {
   return (
     <div className={homeStyles.col}>
-      <div className={homeStyles.small}>INTRODUCING RECME</div>
+      <div className={homeStyles.small}>INTRODUCING RECTREE</div>
       <div className={homeStyles.title} style={{ color: 'rgba(0,0,0,0.85)' }}>Rewards for recommendations.</div>
-      <div className={homeStyles.info}>RecMe rewards you for referring your favorite stores to friends. We connect with your bank account to see if you’ve bought from eligible stores.</div>
+      <div className={homeStyles.info}>RecTree rewards you for referring your favorite stores to friends. We connect with your bank account to see if you’ve bought from eligible stores.</div>
 
       <div style={{ marginTop: 50 }}>
         <ActionButton>Sign Up</ActionButton>

@@ -2,14 +2,14 @@ import React from 'react';
 import businessStyles from 'styles/business.module.scss';
 import { StatSection, WhyItem } from './index';
 
-const WhyRecMe = ({ inputRef }) => {
+const WhyRecTree = ({ inputRef }) => {
   return (
     <div className={businessStyles.whySection} ref={inputRef}>
-      <StatSection title="Why RecMe?" />
+      <StatSection title="Why RecTree?" />
       <WhyItem
         title="Turn customers into "
         highlightedTitle="passionate advocates."
-        description="RecMe lets customers add their friends, and make referrals if they’ve shopped at your business."
+        description="RecTree lets customers add their friends, and make referrals if they’ve shopped at your business."
         image={require('public/consumer.png')}
         color="#FFB7B2"
       />
@@ -24,7 +24,7 @@ const WhyRecMe = ({ inputRef }) => {
       <WhyItem
         title="Integrate with mobile "
         highlightedTitle="delivery apps."
-        description="We verify purchases using transaction history, meaning that we can integrate with apps like Doordash and Postmates. "
+        description="We verify purchases using transaction history, meaning that we can integrate with apps like Doordash and Postmates."
         image={require('public/delivery.png')}
         color="#FFDAC1"
       />
@@ -32,4 +32,4 @@ const WhyRecMe = ({ inputRef }) => {
   );
 };
 
-export default WhyRecMe;
+export default WhyRecTree;

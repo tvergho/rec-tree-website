@@ -11,7 +11,7 @@ const LeftCol = () => {
       <div
         className={businessStyles.info}
         style={{ marginTop: width <= 768 ? 20 : 50 }}
-      >RecMe rewards consumers for recommending your business to friends, and you only pay if brand-new customers buy your product.
+      >RecTree rewards consumers for recommending your business to friends, and you only pay if brand-new customers buy your product.
       </div>
     </div>
   );

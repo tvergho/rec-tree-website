@@ -19,8 +19,8 @@ const Home = () => {
   return (
     <>
       <NextSeo
-        title="Home • RecMe"
-        description="RecMe allows you to recommend your favorite businesses to your friends. Stay up to date with where your friends are shopping and earn money back for using the app."
+        title="Home • RecTree"
+        description="RecTree allows you to recommend your favorite businesses to your friends. Stay up to date with where your friends are shopping and earn money back for using the app."
       />
       <TopHeader links={HEADER_LINKS} invert border />
       <TopImageBanner />

@@ -1,3 +1,3 @@
-# RecMe Website
+# RecTree Website
 
-This is the repository for the RecMe website.
+This is the repository for the RecTree website.

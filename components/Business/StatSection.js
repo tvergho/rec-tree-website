@@ -20,7 +20,7 @@ const StatItem = ({
   );
 };
 
-const StatSection = ({ title = 'Why RecMe?', smallText }) => {
+const StatSection = ({ title = 'Why RecTree?', smallText }) => {
   const statRef = useRef(null);
   const scrolled = useScrollPosition(statRef, 120);
 
