@@ -7,6 +7,8 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import fetch from 'node-fetch';
+import * as firebase from 'firebase/app';
+import firebaseConfig from '../firebaseConfig';
 
 export const theme = createMuiTheme({
   palette: {
@@ -54,6 +56,10 @@ const client = new ApolloClient({
     },
   }),
 });
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
 
 export default function App({ Component, pageProps }) {
   React.useEffect(() => {

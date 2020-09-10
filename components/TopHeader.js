@@ -94,6 +94,7 @@ const MobileBackdrop = ({
 };
 
 const HeaderNav = ({ links, color }) => {
+  if (!links) return null;
   return (
     <nav>
       {links.map((link) => {
@@ -132,20 +133,24 @@ const TopHeader = ({ links, invert, border }) => {
   return (
     <>
       <header className={businessStyles.header} style={{ borderBottom: border ? '1px solid rgba(0,0,0,0.1)' : '', backgroundColor: invert ? 'white' : '' }}>
-        <div>
-          <Logo color={color} />
-          {invert ? <RecTreeText style={{ marginLeft: 15 }} /> : <ForMerchantsLogo style={{ marginLeft: 15 }} />}
-          <style jsx>
-            {`
+
+        <Link href="/" passHref>
+          <a>
+            <Logo color={color} />
+            {invert ? <RecTreeText style={{ marginLeft: 15 }} /> : <ForMerchantsLogo style={{ marginLeft: 15 }} />}
+            <style jsx>
+              {`
             display: flex;
             align-items: center;
           `}
-          </style>
-        </div>
+            </style>
+          </a>
+        </Link>
 
-        {width > MOBILE_WIDTH && typeof window !== 'undefined' ? <HeaderNav links={links} color={color} /> : <MobileButton onClick={openBackdrop} color={color} />}
+        {(width > MOBILE_WIDTH && typeof window !== 'undefined') || !links ? <HeaderNav links={links} color={color} /> : <MobileButton onClick={openBackdrop} color={color} />}
       </header>
-      <MobileBackdrop isOpen={open} close={closeBackdrop} links={links} />
+
+      {links && <MobileBackdrop isOpen={open} close={closeBackdrop} links={links} />}
     </>
   );
 };
@@ -155,7 +160,7 @@ TopHeader.propTypes = {
     name: PropTypes.string,
     func: PropTypes.func,
     to: PropTypes.string,
-  })).isRequired,
+  })),
   invert: PropTypes.bool,
   border: PropTypes.bool,
 };
