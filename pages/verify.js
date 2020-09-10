@@ -5,13 +5,13 @@ import styles from 'styles/verify.module.scss';
 import { VerifyEmail, RevokeEmail, PasswordReset } from 'components/Verify';
 
 const Verify = () => {
-  const [mode, setMode] = useState('resetPassword');
-  const [actionCode, setActionCode] = useState('a');
+  const [mode, setMode] = useState('');
+  const [actionCode, setActionCode] = useState('');
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
-    // setMode(urlParams.get('mode'));
-    // setActionCode(urlParams.get('oobCode'));
+    setMode(urlParams.get('mode'));
+    setActionCode(urlParams.get('oobCode'));
   }, []);
 
   return (
